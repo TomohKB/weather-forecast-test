@@ -22,8 +22,17 @@ Button.addEventListener("click", () => {
     .then(function (weather) {
         let area = weather[0].timeSeries[0].areas[0];
         let tempsArea = weather[1].tempAverage.areas[0];
-
+        // console.log(weather);
         document.getElementById("publishingOffice").textContent = weather[0].publishingOffice;
+        // 前半は、html内でid="publishingOffice"を持つ要素を取得
+        // textContentに新しい値を代入すると、その値で上書きされるpublishingOffice
+        // weather配列の一つ目の要素(weather[0])の中にある
+        // let weather = [
+        //     {
+        //         publishingOffice: "名古屋地方気象台",
+        //         targetArea: "西部"
+        //     }
+        // ]
         document.getElementById("reportDatetime").textContent = weather[0].reportDatetime;
         document.getElementById("targetArea").textContent = area.area.name;
         document.getElementById("todayHighTemperature").textContent = tempsArea.max + "°C";
@@ -31,8 +40,9 @@ Button.addEventListener("click", () => {
         document.getElementById("today").textContent = area.weathers[0];
         document.getElementById("tomorrow").textContent = area.weathers[1];
         document.getElementById("dayAfterTomorrow").textContent = area.weathers[2];
+    })
+    .catch(function (_error) {
+        alert(_error.message);
+        //読みやすさ的に_を使う：意味ないけど
     });
-    // .catch(function (error) {
-    //     alert(error.message);
-    // });
 });

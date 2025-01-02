@@ -19,37 +19,40 @@
       </select>
       <button id="get-weather">天気を取得</button>
       <table>
-        <tr id="publishingOffice">
+        <tr>
           <th>発表者</th>
-          <td></td>
+          <td id="publishingOffice"></td>
+          <!-- trにidをつけると<tr>全体のtextContentを書き換えてしまう(textcontentは要素全体を上書きしてしまう
+            →<th,td>などの子要素が削除されて、単純なテキストノードとして表示される
+            →更新したいのは<td>要素のみなので、idをそこに設定すれば良い -->
         </tr>
-        <tr id="reportDatetime">
+        <tr>
           <th>報告日時</th>
-          <td></td>
+          <td id="reportDatetime"></td>
         </tr>
-        <tr id="targetArea">
+        <tr>
           <th>対象地域</th>
-          <td></td>
+          <td id="targetArea"></td>
         </tr>
-        <tr id="todayHighTemperature">
+        <tr>
           <th>今日の最高気温</th>
-          <td></td>
+          <td id="todayHighTemperature"></td>
         </tr>
-        <tr id="todayLowTemperature">
+        <tr>
           <th>今日の最低気温</th>
-          <td></td>
+          <td id="todayLowTemperature"></td>
         </tr>
-        <tr id="today">
+        <tr>
           <th>今日の天気</th>
-          <td></td>
+          <td id="today"></td>
         </tr>
-        <tr id="tomorrow">
+        <tr>
           <th>明日の天気</th>
-          <td></td>
+          <td id="tomorrow"></td>
         </tr>
-        <tr id="dayAfterTomorrow">
+        <tr>
           <th>明後日の天気</th>
-          <td></td>
+          <td id="dayAfterTomorrow"></td>
         </tr>
       </table>
     </div>
